@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>My Blog</title><link>https://www.myblog.com/blog/</link><description></description><pubDate>Wed, 16 Oct 2024 00:00:00 GMT</pubDate><lastBuildDate>Sun, 26 Jan 2025 23:25:09 GMT</lastBuildDate><generator>marmite</generator><image><url>https://www.myblog.com/blog//./media/og_image.jpg</url><title></title><link></link></image><item><title>Hosting</title><link>https://www.myblog.com/blog//hosting.html</link><author>rochacbruno</author><category>docs</category><category>hosting</category><guid>https://www.myblog.com/blog//hosting.html</guid><pubDate>Wed, 16 Oct 2024 00:00:00 GMT</pubDate><source url="https://www.myblog.com/blog/">tag-hosting</source><content:encoded><![CDATA[<p>Marmite genetates a static site, so you can host it in any web server.</p>
+<p>Examples:</p>
+<ul>
+<li>Github pages</li>
+<li>Gitlab pages</li>
+<li>Netlify</li>
+<li>Vercel</li>
+<li>Nginx</li>
+<li>Apache</li>
+</ul>
+<h3><a href="#github-pages" aria-hidden="true" class="anchor" id="github-pages"></a>Github Pages</h3>
+<p>This is the easiest and cheapest option to publish your static blog,
+you need a <strong>Github Repository</strong> containing a <code>content</code> directory and a <code>marmite.yaml</code></p>
+<p>Use this template repository <a href="https://github.com/rochacbruno/blog">https://github.com/rochacbruno/blog</a> and give a meaninful name like <code>blog</code>.</p>
+<p>Or start from scratch! it is very simple!</p>
+<hr />
+<p>Create a new repository and the following files.</p>
+<pre><code class="language-bash">.
+|_ marmite.yaml
+|_ content
+  |_ 2024-10-22-my-first-post.md
+  |_ about.md
+</code></pre>
+<p>Edit <code>marmite.yaml</code> to add your preferences.</p>
+<pre><code class="language-yaml">name: My Blog
+tagline: Poems, Essays and Articles
+url: https://YOURUSER.github.io/REPONAME
+menu:
+  - [&quot;About&quot;, &quot;about.html&quot;]
+  - [&quot;Pages&quot;, &quot;pages.html&quot;]
+  - [&quot;Tags&quot;, &quot;tags.html&quot;]
+  - [&quot;Follow me&quot;, &quot;https://mastodon.social/@YOURUSER&quot;]
+  - [&quot;Github&quot;, &quot;https://github.com/rochacbruno&quot;]
+</code></pre>
+<blockquote>
+<p>[!TIP]<br />
+you can use <code>--generate-config</code> to generate a default configuration file.</p>
+</blockquote>
+<p>Now you need to tell github actions to go inside your repo root and run</p>
+<pre><code>marmite . site
+</code></pre>
+<p>And then publish the <code>site/</code> directory as the github page for your repo.</p>
+<p>You can automate that:</p>
+<p>First access <a href="https://github.com/YOURUSER/REPONAME/settings/pages">https://github.com/YOURUSER/REPONAME/settings/pages</a> and set the
+pages source to <strong>Github Actions</strong></p>
+<p>Then add a workflow to your repository.</p>
+<p><code>.github/workflows/main.yaml</code></p>
+<pre><code class="language-yaml">name: GH Pages Deploy
+
+on:
+  push:
+    branches: [main]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: &quot;pages&quot;
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v4
+
+      - name: Install marmite 🫙
+        run: cargo install marmite
+
+      - name: Build site 🏗️
+        run: marmite . site --debug
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'site'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+</code></pre>
+<p>Now commit and push to the main branch and wait for your blog to be published at</p>
+<p><a href="https://YOURUSER.github.io/REPONAME">https://YOURUSER.github.io/REPONAME</a></p>
+<p>Read <a href="./customizing-templates.html">Customizing Templates</a> to learn how
+to customize the look and feel of your blog.</p>
+<blockquote>
+<p>Please consider giving a ☆ on Marmite <a href="https://github.com/rochacbruno/marmite">Github</a> repository, that helps a lot!</p>
+</blockquote>
+<!-- Contents from _markdown_footer.md are appended to every content -->
+<!-- _references.md is a file to gather all references together 
+this file is appended to every raw markdown.
+-->
+]]></content:encoded></item></channel></rss>

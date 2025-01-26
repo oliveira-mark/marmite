@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="./static/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+    <meta name="generator" content="Marmite" />
+    
+<meta property="og:title" content="Enabling Comments">
+
+<meta property="og:description" content="Marmite as a static site generator, doesn't have commenting features,
+but there are various options ...">
+
+<meta property="og:image" content="https://www.myblog.com/blog/media/comment.jpg">
+
+
+<meta property="og:url" content="https://www.myblog.com/blog/enabling-comments.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="My Blog">
+
+<meta property="article:published_time" content=" 2024-10-15T00:00:00+00:00">
+
+
+<meta property="article:author" content="https://www.myblog.com/blog/author-rochacbruno.html">
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.myblog.com/blog/enabling-comments.html"
+    },
+    "url": "https://www.myblog.com/blog/enabling-comments.html",
+    "headline": "Enabling Comments",
+    "description": "Marmite as a static site generator, doesn't have commenting features,
+but there are various options of external commenting systems to integr...",
+    "image": "https://www.myblog.com/blog/media/comment.jpg",
+    "author": {
+        "@type": "Person",
+        "name": "Bruno Rocha",
+        "url": "https://www.myblog.com/blog/author-rochacbruno.html",
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "My Blog",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.myblog.com/blog/media/logo.png"
+        }
+    },
+    "datePublished": "2024-10-15T00:00:00+00:00"
+}
+</script>
+
+
+    <title>Enabling Comments | My Blog</title>
+    <link rel="stylesheet" type="text/css" href="./static/pico.min.css">
+    <link rel="stylesheet" type="text/css" href="./static/marmite.css">
+    
+    <link rel="stylesheet" type="text/css" href="./static/custom.css">
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github.min.css" id="highlightjs-theme" />
+
+
+
+    <link rel="alternate" type="application/rss+xml" title="index" href="index.rss">
+    
+    <link rel="alternate" type="application/rss+xml" title="alt" href="alt.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: docs" href="tag-docs.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: customization" href="tag-customization.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: templates" href="tag-templates.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: theme" href="tag-theme.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: GFM" href="tag-gfm.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: markdown" href="tag-markdown.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: Common Mark" href="tag-common-mark.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: comments" href="tag-comments.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: hosting" href="tag-hosting.rss">
+    <link rel="alternate" type="application/rss+xml" title="author: john" href="author-john.rss">
+    <link rel="alternate" type="application/rss+xml" title="author: karlamagueta" href="author-karlamagueta.rss">
+    <link rel="alternate" type="application/rss+xml" title="author: rochacbruno" href="author-rochacbruno.rss">
+    <link rel="alternate" type="application/rss+xml" title="year: 2024" href="archive-2024.rss">
+    <link rel="alternate" type="application/rss+xml" title="year: 2023" href="archive-2023.rss">
+    
+
+    
+    <link rel="alternate" type="application/feed+json" title="JSON index" href="index.json">
+    
+    <link rel="alternate" type="application/feed+json" title="JSON alt" href="alt.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: docs" href="tag-docs.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: customization" href="tag-customization.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: templates" href="tag-templates.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: theme" href="tag-theme.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: GFM" href="tag-gfm.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: markdown" href="tag-markdown.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: Common Mark" href="tag-common-mark.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: comments" href="tag-comments.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: hosting" href="tag-hosting.json">
+    <link rel="alternate" type="application/feed+json" title="JSON author: john" href="author-john.json">
+    <link rel="alternate" type="application/feed+json" title="JSON author: karlamagueta" href="author-karlamagueta.json">
+    <link rel="alternate" type="application/feed+json" title="JSON author: rochacbruno" href="author-rochacbruno.json">
+    <link rel="alternate" type="application/feed+json" title="JSON year: 2024" href="archive-2024.json">
+    <link rel="alternate" type="application/feed+json" title="JSON year: 2023" href="archive-2023.json">
+    
+    
+    
+    
+    <script defer src="https://umami.rochacbruno.com/script.js" data-website-id="c8fbd715-5b90-4efd-b27e-a5836dce86a4"></script>
+<!-- _references.md is a file to gather all references together 
+this file is appended to every raw markdown.
+-->
+
+    
+</head>
+<body>
+    
+    <div class="container-fluid announcement-wrapper">
+        <div class="announcement"><p>Give us a ☆ on <a href="https://github.com/rochacbruno/marmite">github</a></p>
+<!-- _references.md is a file to gather all references together 
+this file is appended to every raw markdown.
+-->
+</div>
+    </div>
+    
+    <main class="container">
+        
+        <header class="header-content">
+            <nav class="header-nav">
+                <ul class="header-name">
+                    <li>
+                        <hgroup>
+                            <h2><a href="./" class="contrast">My Blog</a></h2>
+                            
+                        </hgroup>
+                    </li>
+                </ul>
+                <button id="menu-toggle" class="hamburger">&#9776;</button>
+                
+                <ul class="header-menu" id="header-menu">
+                    
+                      
+                      
+                    <li>
+                        
+                        <a class="menu-item secondary"  href="./pages.html">Pages</a>
+                        
+                    </li>
+                    
+                      
+                      
+                    <li>
+                        
+                        <a class="menu-item secondary"  href="./tags.html">Tags</a>
+                        
+                    </li>
+                    
+                      
+                      
+                    <li>
+                        
+                        <a class="menu-item secondary"  href="./archive.html">Archive</a>
+                        
+                    </li>
+                    
+                      
+                      
+                    <li>
+                        
+                        <a class="menu-item secondary"  href="./authors.html">Authors</a>
+                        
+                    </li>
+                    
+                      
+                      
+                    <li>
+                        
+                        <a class="menu-item secondary"  href="https://github.com/rochacbruno/marmite" target="_blank" >Github</a>
+                        
+                    </li>
+                    
+                    <li><span class="theme-toggle secondary" title="dark mode">&#9789;</span></li>
+                    
+                    <li><a href="#" id="search-toggle" class="secondary" title="Search (Ctrl + Shift + F)"> <span class="search-txt">Search</span><span class="search-magnifier"></span></a></li>
+                    
+                    <div class="underline"></div>
+                </ul>
+            </nav>
+            
+            <div class="marmite-background-overlay" id="overlay-close"></div>
+            <div class="marmite-search-bar hidden">
+                <span>Search</span>
+                <button class="marmite-close-button" id="search-close">X</button>
+                <input placeholder="Search" id="marmite-search-input" />
+                <div class="marmite-search-bar-result">
+                    <ul id="marmite-search-bar-result"></ul>
+                </div>
+            </div>
+            
+        </header>
+        
+        <section class="main-content">
+            
+
+
+<div class="content-banner-image" style="background-image: url(media/comment.jpg);"></div>
+
+
+<article>
+
+  
+
+
+<div class="content-title" id="title">
+    <h1>Enabling Comments</h1> 
+    
+
+
+<span class="content-date">
+    <small> Tuesday, 15 October 2024 - &#10710; 3 min</small>
+</span>
+
+</div>
+
+  
+  <div class="content-toc">
+    <a href="#" id="toc"></a>
+    <details>
+    <summary>🗒️</summary>
+    <ul>
+<ul>
+<li><a href="#setting-up-utterances">Setting up Utterances</a></li>
+<li><a href="#setting-up-giscus">Setting up Giscus</a></li>
+<li><a href="#setting-up-other-comment-systems">Setting up other comment systems</a></li>
+<li><a href="#setting-on-the-config-file">Setting on the config file</a></li>
+<li><a href="#customizing-the-html-template-directly">Customizing the HTML template directly</a></li>
+</ul>
+</ul>
+
+    </details>
+  </div>
+  
+
+  <div class="content-html"><p>Marmite as a static site generator, doesn't have commenting features,
+but there are various options of external commenting systems to integrate.</p>
+<dl>
+<dt>Utterances</dt>
+<dd>
+<p>Use github issues as comment system<br />
+Requires user to login to github</p>
+</dd>
+<dt><strong>Giscus</strong></dt>
+<dd>
+<p>Use Github discussions as comment system<br />
+requires user to login to github.</p>
+</dd>
+<dt>Hatsu</dt>
+<dd>
+<p>Federated to ActivityPub<br />
+Requires a running instance<br />
+Requires user to comment from a fediverse account.</p>
+</dd>
+</dl>
+<p>Paid alternatives are Disqus and Commento, easy to add but not covered on this article.</p>
+<hr />
+<p>For now the easiest systems are Giscus and Utterances.</p>
+<h2><a href="#setting-up-utterances" aria-hidden="true" class="anchor" id="setting-up-utterances"></a>Setting up Utterances</h2>
+<ol>
+<li>First you need to have a github repository
+<ul>
+<li>if you used the starting <a href="https://github.com/rochacbruno/make-me-a-blog">repo</a> you already got one.</li>
+<li>You can create a repository solely for comments, the blog doesn't need to be hosted on the same repo.</li>
+</ul>
+</li>
+<li>The repository must be public, otherwise visitors will not be able to view the discussion.</li>
+<li>Install <a href="https://github.com/apps/utterances">utterances app</a> on your repo, otherwise visitors will not be able to comment and react.</li>
+</ol>
+<p>Add a <code>_comments.md</code> to your content folder.</p>
+<pre><code class="language-markdown">##### Comments
+
+&lt;script src='https://utteranc.es/client.js'
+repo='youruser/your-repo'
+issue-term='pathname'
+theme='preferred-color-scheme'
+crossorigin='anonymous'
+async&gt;
+&lt;/script&gt;
+</code></pre>
+<h2><a href="#setting-up-giscus" aria-hidden="true" class="anchor" id="setting-up-giscus"></a>Setting up Giscus</h2>
+<ol>
+<li>First you need to have a github repository
+<ul>
+<li>if you used the starting <a href="https://github.com/rochacbruno/make-me-a-blog">repo</a> you already got one.</li>
+<li>You can create a repository solely for comments, the blog doesn't need to be hosted on the same repo.</li>
+</ul>
+</li>
+<li>The repository must be public, otherwise visitors will not be able to view the discussion.</li>
+<li>Install <a href="https://github.com/apps/giscus">giscus app</a> on your repo, otherwise visitors will not be able to comment and react.</li>
+<li>The Discussions feature must be <a href="https://docs.github.com/en/github/administering-a-repository/managing-repository-settings/enabling-or-disabling-github-discussions-for-a-repository">enabled</a> on your repository.</li>
+</ol>
+<p>Now go to <a href="https://giscus.app/">https://giscus.app/</a> and find the <strong>configuration</strong> section, configure ir and and Copy the <code>&lt;script ... /script&gt;</code>.</p>
+<p>Now there are 2 ways to add it to Marmite</p>
+<ol>
+<li>On a markdown fragment</li>
+</ol>
+<p>Add a <code>_comments.md</code> to your content folder.</p>
+<pre><code class="language-markdown">##### Comments
+
+&lt;script src=&quot;https://giscus.app/client.js&quot;
+        data-repo=&quot;rochacbruno/marmite&quot;
+        data-repo-id=&quot;R_kgDONAKMvQ&quot;
+        data-category=&quot;Comments&quot;
+        data-category-id=&quot;DIC_kwDONAKMvc4CjmH_&quot;
+        data-mapping=&quot;pathname&quot;
+        data-strict=&quot;0&quot;
+        data-reactions-enabled=&quot;1&quot;
+        data-emit-metadata=&quot;0&quot;
+        data-input-position=&quot;bottom&quot;
+        data-theme=&quot;preferred_color_scheme&quot;
+        data-lang=&quot;en&quot;
+        data-loading=&quot;lazy&quot;
+        crossorigin=&quot;anonymous&quot;
+        async&gt;
+&lt;/script&gt;
+</code></pre>
+<h2><a href="#setting-up-other-comment-systems" aria-hidden="true" class="anchor" id="setting-up-other-comment-systems"></a>Setting up other comment systems</h2>
+<p>The process will be very similar, you just need to grab the required <code>script</code> and tags.</p>
+<p><code>content/_comments.md</code></p>
+<pre><code class="language-markdown">##### Comments
+
+&lt;div id=&quot;comment-system&quot;&gt;&lt;/div&gt;
+&lt;script src=&quot;https://commentsystem.app/foo/bar/dothethings.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h2><a href="#setting-on-the-config-file" aria-hidden="true" class="anchor" id="setting-on-the-config-file"></a>Setting on the config file</h2>
+<ol start="2">
+<li>Alternatively, add to  <code>marmite.yaml</code> extra section.</li>
+</ol>
+<pre><code class="language-yaml">extra:
+  comments:
+    title: Comments
+    source: |
+        &lt;script src=&quot;https://giscus.app/client.js&quot;
+        data-repo=&quot;yourrepo/blog&quot;
+        data-repo-id=&quot;sdsdsd&quot;
+        data-category=&quot;Announcements&quot;
+        data-category-id=&quot;dfsffsdfsdfsdfsdf&quot;
+        data-mapping=&quot;pathname&quot;
+        data-strict=&quot;0&quot;
+        data-reactions-enabled=&quot;1&quot;
+        data-emit-metadata=&quot;0&quot;
+        data-input-position=&quot;top&quot;
+        data-theme=&quot;preferred_color_scheme&quot;
+        data-lang=&quot;en&quot;
+        data-loading=&quot;lazy&quot;
+        crossorigin=&quot;anonymous&quot;
+        async&gt;
+        &lt;/script&gt;
+</code></pre>
+<p>Same for any other comment system</p>
+<pre><code class="language-yaml">extra:
+  comments:
+    title: Comments
+    source: |
+        &lt;div id=&quot;comment-system&quot;&gt;&lt;/div&gt;
+        &lt;script src=&quot;https://commentsystem.app/foo/bar/dothethings.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h2><a href="#customizing-the-html-template-directly" aria-hidden="true" class="anchor" id="customizing-the-html-template-directly"></a>Customizing the HTML template directly</h2>
+<p>Add <code>templates/comments.html</code> to your project.</p>
+<pre><code class="language-html">&lt;article&gt;
+&lt;header&gt;{{site.extra.comments.title | default(value=&quot;Comments&quot;) }}&lt;/header&gt;
+{{site.extra.comments.source}}
+&lt;/article&gt;
+</code></pre>
+<blockquote>
+<p>Please consider giving a ☆ on Marmite <a href="https://github.com/rochacbruno/marmite">Github</a> repository, that helps a lot!</p>
+</blockquote>
+<!-- Contents from _markdown_footer.md are appended to every content -->
+<!-- _references.md is a file to gather all references together 
+this file is appended to every raw markdown.
+-->
+</div>
+  
+  <footer class="data-tags-footer">
+
+    <div class="content-authors-flex">
+      <div class="content-authors-full">
+        
+<div class="content-authors">
+    <ul>
+        
+            
+            
+            <li>
+                <a href="author-rochacbruno.html">
+                    <img src="https://github.com/rochacbruno.png" alt="Bruno Rocha" class="avatar">
+                    Bruno Rocha
+                </a>
+            </li>
+            
+        
+    </ul>
+</div>
+
+
+      </div>
+
+      <div class="date-tags-container">
+        <div class="content-date">
+          
+
+
+<span class="content-date">
+    <small> Tuesday, 15 October 2024 - &#10710; 3 min</small>
+</span>
+
+        </div>
+
+        <ul class="content-tags">
+          
+          <li><a href="./tag-docs.html">docs</a></li>
+          
+          <li><a href="./tag-comments.html">comments</a></li>
+          
+          <li><a href="./tag-customization.html">customization</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </footer>
+  
+</article>
+
+
+<article>
+  Back-links
+  <ul>
+    
+    <li><a href="./getting-started.html">Getting started</a></li>
+    
+  </ul>
+</article>
+
+
+
+  
+  
+  
+  
+  <article>
+    Related docs content
+    <ul>
+      
+      
+      <li><a href="./marmite-command-line-interface.html">Marmite Command Line Interface</a></li>
+      
+      
+      
+      
+      <li><a href="./why-to-use-marmite.html">Why to use Marmite?</a></li>
+      
+      
+      <li><a href="./customizing-templates.html">Customizing Templates</a></li>
+      
+      
+      <li><a href="./using-markdown-to-customize-layout.html">Using Markdown to customize layout</a></li>
+      
+    </ul>
+  </article>
+  
+
+
+
+    <article><h5><a href="#comments" aria-hidden="true" class="anchor" id="comments"></a>Comments</h5>
+<script src="https://giscus.app/client.js"
+        data-repo="rochacbruno/marmite"
+        data-repo-id="R_kgDONAKMvQ"
+        data-category="Comments"
+        data-category-id="DIC_kwDONAKMvc4CjmH_"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+<!-- _references.md is a file to gather all references together 
+this file is appended to every raw markdown.
+-->
+</article>
+
+
+
+        </section>
+        
+        <footer class="footer-content grid">
+            <div>Powered by <a href="https://github.com/rochacbruno/marmite">Marmite</a> | <small><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY_NC-SA</a></small></div>
+            
+            <div class="colorscheme-toggle-div">
+                colorscheme: <select name="colorscheme" class="colorscheme-toggle"><option value="default">default</option></select>
+                <span class="theme-toggle secondary" title="dark mode">&#9789;</span>
+            </div>
+            
+        </footer>
+        
+    </main>
+
+    <script src="./static/marmite.js"></script>
+    <script src="./static/custom.js"></script>
+    
+    <script type="module" src="./static/search.js"></script>
+    
+    
+    <script type="application/javascript" >
+        colorschemeSwitcher();
+    </script>
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script>
+<script>
+  hljs.highlightAll();
+</script>
+
+
+
+</body>
+</html>

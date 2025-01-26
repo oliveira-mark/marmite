@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>My Blog</title><link>https://www.myblog.com/blog/</link><description></description><pubDate>Tue, 15 Oct 2024 00:00:00 GMT</pubDate><lastBuildDate>Sun, 26 Jan 2025 23:25:09 GMT</lastBuildDate><generator>marmite</generator><image><url>https://www.myblog.com/blog//./media/og_image.jpg</url><title></title><link></link></image><item><title>Enabling Comments</title><link>https://www.myblog.com/blog//enabling-comments.html</link><author>rochacbruno</author><category>docs</category><category>comments</category><category>customization</category><guid>https://www.myblog.com/blog//enabling-comments.html</guid><pubDate>Tue, 15 Oct 2024 00:00:00 GMT</pubDate><source url="https://www.myblog.com/blog/">tag-comments</source><content:encoded><![CDATA[<p>Marmite as a static site generator, doesn't have commenting features,
+but there are various options of external commenting systems to integrate.</p>
+<dl>
+<dt>Utterances</dt>
+<dd>
+<p>Use github issues as comment system<br />
+Requires user to login to github</p>
+</dd>
+<dt><strong>Giscus</strong></dt>
+<dd>
+<p>Use Github discussions as comment system<br />
+requires user to login to github.</p>
+</dd>
+<dt>Hatsu</dt>
+<dd>
+<p>Federated to ActivityPub<br />
+Requires a running instance<br />
+Requires user to comment from a fediverse account.</p>
+</dd>
+</dl>
+<p>Paid alternatives are Disqus and Commento, easy to add but not covered on this article.</p>
+<hr />
+<p>For now the easiest systems are Giscus and Utterances.</p>
+<h2><a href="#setting-up-utterances" aria-hidden="true" class="anchor" id="setting-up-utterances"></a>Setting up Utterances</h2>
+<ol>
+<li>First you need to have a github repository
+<ul>
+<li>if you used the starting <a href="https://github.com/rochacbruno/make-me-a-blog">repo</a> you already got one.</li>
+<li>You can create a repository solely for comments, the blog doesn't need to be hosted on the same repo.</li>
+</ul>
+</li>
+<li>The repository must be public, otherwise visitors will not be able to view the discussion.</li>
+<li>Install <a href="https://github.com/apps/utterances">utterances app</a> on your repo, otherwise visitors will not be able to comment and react.</li>
+</ol>
+<p>Add a <code>_comments.md</code> to your content folder.</p>
+<pre><code class="language-markdown">##### Comments
+
+&lt;script src='https://utteranc.es/client.js'
+repo='youruser/your-repo'
+issue-term='pathname'
+theme='preferred-color-scheme'
+crossorigin='anonymous'
+async&gt;
+&lt;/script&gt;
+</code></pre>
+<h2><a href="#setting-up-giscus" aria-hidden="true" class="anchor" id="setting-up-giscus"></a>Setting up Giscus</h2>
+<ol>
+<li>First you need to have a github repository
+<ul>
+<li>if you used the starting <a href="https://github.com/rochacbruno/make-me-a-blog">repo</a> you already got one.</li>
+<li>You can create a repository solely for comments, the blog doesn't need to be hosted on the same repo.</li>
+</ul>
+</li>
+<li>The repository must be public, otherwise visitors will not be able to view the discussion.</li>
+<li>Install <a href="https://github.com/apps/giscus">giscus app</a> on your repo, otherwise visitors will not be able to comment and react.</li>
+<li>The Discussions feature must be <a href="https://docs.github.com/en/github/administering-a-repository/managing-repository-settings/enabling-or-disabling-github-discussions-for-a-repository">enabled</a> on your repository.</li>
+</ol>
+<p>Now go to <a href="https://giscus.app/">https://giscus.app/</a> and find the <strong>configuration</strong> section, configure ir and and Copy the <code>&lt;script ... /script&gt;</code>.</p>
+<p>Now there are 2 ways to add it to Marmite</p>
+<ol>
+<li>On a markdown fragment</li>
+</ol>
+<p>Add a <code>_comments.md</code> to your content folder.</p>
+<pre><code class="language-markdown">##### Comments
+
+&lt;script src=&quot;https://giscus.app/client.js&quot;
+        data-repo=&quot;rochacbruno/marmite&quot;
+        data-repo-id=&quot;R_kgDONAKMvQ&quot;
+        data-category=&quot;Comments&quot;
+        data-category-id=&quot;DIC_kwDONAKMvc4CjmH_&quot;
+        data-mapping=&quot;pathname&quot;
+        data-strict=&quot;0&quot;
+        data-reactions-enabled=&quot;1&quot;
+        data-emit-metadata=&quot;0&quot;
+        data-input-position=&quot;bottom&quot;
+        data-theme=&quot;preferred_color_scheme&quot;
+        data-lang=&quot;en&quot;
+        data-loading=&quot;lazy&quot;
+        crossorigin=&quot;anonymous&quot;
+        async&gt;
+&lt;/script&gt;
+</code></pre>
+<h2><a href="#setting-up-other-comment-systems" aria-hidden="true" class="anchor" id="setting-up-other-comment-systems"></a>Setting up other comment systems</h2>
+<p>The process will be very similar, you just need to grab the required <code>script</code> and tags.</p>
+<p><code>content/_comments.md</code></p>
+<pre><code class="language-markdown">##### Comments
+
+&lt;div id=&quot;comment-system&quot;&gt;&lt;/div&gt;
+&lt;script src=&quot;https://commentsystem.app/foo/bar/dothethings.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h2><a href="#setting-on-the-config-file" aria-hidden="true" class="anchor" id="setting-on-the-config-file"></a>Setting on the config file</h2>
+<ol start="2">
+<li>Alternatively, add to  <code>marmite.yaml</code> extra section.</li>
+</ol>
+<pre><code class="language-yaml">extra:
+  comments:
+    title: Comments
+    source: |
+        &lt;script src=&quot;https://giscus.app/client.js&quot;
+        data-repo=&quot;yourrepo/blog&quot;
+        data-repo-id=&quot;sdsdsd&quot;
+        data-category=&quot;Announcements&quot;
+        data-category-id=&quot;dfsffsdfsdfsdfsdf&quot;
+        data-mapping=&quot;pathname&quot;
+        data-strict=&quot;0&quot;
+        data-reactions-enabled=&quot;1&quot;
+        data-emit-metadata=&quot;0&quot;
+        data-input-position=&quot;top&quot;
+        data-theme=&quot;preferred_color_scheme&quot;
+        data-lang=&quot;en&quot;
+        data-loading=&quot;lazy&quot;
+        crossorigin=&quot;anonymous&quot;
+        async&gt;
+        &lt;/script&gt;
+</code></pre>
+<p>Same for any other comment system</p>
+<pre><code class="language-yaml">extra:
+  comments:
+    title: Comments
+    source: |
+        &lt;div id=&quot;comment-system&quot;&gt;&lt;/div&gt;
+        &lt;script src=&quot;https://commentsystem.app/foo/bar/dothethings.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h2><a href="#customizing-the-html-template-directly" aria-hidden="true" class="anchor" id="customizing-the-html-template-directly"></a>Customizing the HTML template directly</h2>
+<p>Add <code>templates/comments.html</code> to your project.</p>
+<pre><code class="language-html">&lt;article&gt;
+&lt;header&gt;{{site.extra.comments.title | default(value=&quot;Comments&quot;) }}&lt;/header&gt;
+{{site.extra.comments.source}}
+&lt;/article&gt;
+</code></pre>
+<blockquote>
+<p>Please consider giving a ☆ on Marmite <a href="https://github.com/rochacbruno/marmite">Github</a> repository, that helps a lot!</p>
+</blockquote>
+<!-- Contents from _markdown_footer.md are appended to every content -->
+<!-- _references.md is a file to gather all references together 
+this file is appended to every raw markdown.
+-->
+]]></content:encoded></item></channel></rss>

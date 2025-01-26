@@ -1,0 +1,102 @@
+{
+  "marmite_version": "0.2.3",
+  "posts": 11,
+  "pages": 3,
+  "generated_at": "2025-01-26 20:25:09.422582700 -03:00",
+  "timestamp": 1737933909,
+  "elapsed_time": 0.4426843,
+  "config": {
+    "name": "My Blog",
+    "tagline": "",
+    "url": "https://www.myblog.com/blog/",
+    "footer": "<div>Powered by <a href=\"https://github.com/rochacbruno/marmite\">Marmite</a> | <small><a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\">CC-BY_NC-SA</a></small></div>",
+    "language": "en",
+    "pagination": 5,
+    "pages_title": "Pages",
+    "tags_title": "Tags",
+    "tags_content_title": "Posts tagged with '$tag'",
+    "archives_title": "Archive",
+    "archives_content_title": "Posts from '$year'",
+    "streams_title": "Streams",
+    "streams_content_title": "Posts from '$stream'",
+    "default_author": "rochacbruno",
+    "authors_title": "Authors",
+    "enable_search": true,
+    "search_title": "Search",
+    "content_path": "content",
+    "site_path": "",
+    "templates_path": "templates",
+    "static_path": "static",
+    "media_path": "media",
+    "card_image": "./media/og_image.jpg",
+    "banner_image": "",
+    "logo_image": "media/logo.png",
+    "default_date_format": "%A, %d %B %Y",
+    "menu": [
+      [
+        "Pages",
+        "pages.html"
+      ],
+      [
+        "Tags",
+        "tags.html"
+      ],
+      [
+        "Archive",
+        "archive.html"
+      ],
+      [
+        "Authors",
+        "authors.html"
+      ],
+      [
+        "Github",
+        "https://github.com/rochacbruno/marmite"
+      ]
+    ],
+    "extra": {
+      "colorscheme_toggle": true,
+      "static_folders": [
+        "extrastatic"
+      ]
+    },
+    "authors": {
+      "karlamagueta": {
+        "name": "Karla Magueta",
+        "avatar": "https://github.com/karlamagueta.png",
+        "bio": null,
+        "links": [
+          [
+            "Github",
+            "https://github.com/karlamagueta"
+          ]
+        ]
+      },
+      "rochacbruno": {
+        "name": "Bruno Rocha",
+        "avatar": "https://github.com/rochacbruno.png",
+        "bio": "Marmite Maintainer",
+        "links": [
+          [
+            "Fediverse",
+            "https://go.rocha.social/@bruno"
+          ],
+          [
+            "Github",
+            "https://github.com/rochacbruno"
+          ],
+          [
+            "Linkedin",
+            "https://www.linkedin.com/in/rochacbruno/"
+          ],
+          [
+            "Links",
+            "https://bruno.rocha.social"
+          ]
+        ]
+      }
+    },
+    "toc": true,
+    "json_feed": true
+  }
+}

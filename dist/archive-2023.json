@@ -1,0 +1,29 @@
+{
+  "version": "https://jsonfeed.org/version/1",
+  "title": "My Blog",
+  "home_page_url": "https://www.myblog.com/blog/",
+  "feed_url": "https://www.myblog.com/blog//archive-2023.json",
+  "description": "",
+  "items": [
+    {
+      "id": "https://www.myblog.com/blog//pagination.html",
+      "url": "https://www.myblog.com/blog//pagination.html",
+      "title": "Pagination",
+      "content_html": "<!-- This page uses JSON as front-matter, this format is support but not recommended, use YAML `---` or TOML `+++` -->\n<p>Yes! we have pagination!</p>\n<p>Set <code>pagination: 10</code> on your <code>marmite.yaml</code></p>\n<p>The pagination template is very simple</p>\n<pre><code class=\"language-html\">&lt;div class=&quot;pagination&quot;&gt;\n    &lt;nav&gt;\n        &lt;ul&gt;\n        {% if previous_page %}\n            &lt;li&gt;&lt;a href=&quot;{{previous_page}}&quot;&gt;&lt;strong&gt;&amp;larr;&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;\n        {% endif %}\n        &lt;/ul&gt;\n        &lt;ul&gt;\n            &lt;li&gt;&lt;small&gt;{{current_page_number}}/{{total_pages}}&lt;/small&gt;&lt;/li&gt;\n        &lt;/ul&gt;\n        &lt;ul&gt;\n        {% if next_page %}\n            &lt;li&gt;&lt;a href=&quot;{{next_page}}&quot;&gt;&lt;strong&gt;&amp;rarr;&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;\n        {% endif %}\n        &lt;/ul&gt;\n    &lt;/nav&gt;\n&lt;/div&gt;\n</code></pre>\n<blockquote>\n<p>Please consider giving a ☆ on Marmite <a href=\"https://github.com/rochacbruno/marmite\">Github</a> repository, that helps a lot!</p>\n</blockquote>\n<!-- Contents from _markdown_footer.md are appended to every content -->\n<!-- _references.md is a file to gather all references together \nthis file is appended to every raw markdown.\n-->\n",
+      "summary": "",
+      "date_published": "2023-01-01T00:00:00-00:00",
+      "image": "media/pagination.banner.jpg",
+      "authors": [
+        {
+          "name": "Bruno Rocha",
+          "url": "https://go.rocha.social/@bruno",
+          "avatar": "https://github.com/rochacbruno.png"
+        }
+      ],
+      "tags": [
+        "docs"
+      ],
+      "language": "en"
+    }
+  ]
+}

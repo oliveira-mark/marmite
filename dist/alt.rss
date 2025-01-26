@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>My Blog</title><link>https://www.myblog.com/blog/</link><description></description><pubDate>Thu, 14 Nov 2024 00:00:00 GMT</pubDate><lastBuildDate>Sun, 26 Jan 2025 23:25:09 GMT</lastBuildDate><generator>marmite</generator><image><url>https://www.myblog.com/blog//./media/og_image.jpg</url><title></title><link></link></image><item><title>Hello Streams</title><link>https://www.myblog.com/blog//alt-hello-streams.html</link><author>rochacbruno</author><guid>https://www.myblog.com/blog//alt-hello-streams.html</guid><pubDate>Thu, 14 Nov 2024 00:00:00 GMT</pubDate><source url="https://www.myblog.com/blog/">alt</source><content:encoded><![CDATA[<p>This content does not show on index page<br />
+and also does not show on main rss feed.</p>
+<p>Because this content defines a custom stream on the <code>frontmatter</code></p>
+<pre><code class="language-markdown">---
+stream: alt
+---
+# Alternative Stream
+
+This will show only on `alt.html`  
+and will be listed only on `alt.rss`
+</code></pre>
+<p>You can name <code>stream:</code> anything you want, it is useful to have a separate index to add to the menu</p>
+<p>This article will show up on <a href="alt.html" data-wikilink="true">alt</a> stream.</p>
+<p>All streams available on the site will be listed on <a href="streams.html" data-wikilink="true">streams</a> group page.</p>
+<p>If the content has <code>tags</code> and <code>authors</code> the content will still show on <code>tags.html</code> and <code>authors.html</code> page.</p>
+<blockquote>
+<p>[!IMPORTANT]<br />
+Streams are rendered before the content
+So if you have a conflicting slug on your content, it will override the stream page.</p>
+</blockquote>
+<blockquote>
+<p>Please consider giving a ☆ on Marmite <a href="https://github.com/rochacbruno/marmite">Github</a> repository, that helps a lot!</p>
+</blockquote>
+<!-- Contents from _markdown_footer.md are appended to every content -->
+<!-- _references.md is a file to gather all references together 
+this file is appended to every raw markdown.
+-->
+]]></content:encoded></item></channel></rss>

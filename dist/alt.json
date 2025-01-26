@@ -1,0 +1,27 @@
+{
+  "version": "https://jsonfeed.org/version/1",
+  "title": "My Blog",
+  "home_page_url": "https://www.myblog.com/blog/",
+  "feed_url": "https://www.myblog.com/blog//alt.json",
+  "description": "",
+  "items": [
+    {
+      "id": "https://www.myblog.com/blog//alt-hello-streams.html",
+      "url": "https://www.myblog.com/blog//alt-hello-streams.html",
+      "title": "Hello Streams",
+      "content_html": "<p>This content does not show on index page<br />\nand also does not show on main rss feed.</p>\n<p>Because this content defines a custom stream on the <code>frontmatter</code></p>\n<pre><code class=\"language-markdown\">---\nstream: alt\n---\n# Alternative Stream\n\nThis will show only on `alt.html`  \nand will be listed only on `alt.rss`\n</code></pre>\n<p>You can name <code>stream:</code> anything you want, it is useful to have a separate index to add to the menu</p>\n<p>This article will show up on <a href=\"alt.html\" data-wikilink=\"true\">alt</a> stream.</p>\n<p>All streams available on the site will be listed on <a href=\"streams.html\" data-wikilink=\"true\">streams</a> group page.</p>\n<p>If the content has <code>tags</code> and <code>authors</code> the content will still show on <code>tags.html</code> and <code>authors.html</code> page.</p>\n<blockquote>\n<p>[!IMPORTANT]<br />\nStreams are rendered before the content\nSo if you have a conflicting slug on your content, it will override the stream page.</p>\n</blockquote>\n<blockquote>\n<p>Please consider giving a ☆ on Marmite <a href=\"https://github.com/rochacbruno/marmite\">Github</a> repository, that helps a lot!</p>\n</blockquote>\n<!-- Contents from _markdown_footer.md are appended to every content -->\n<!-- _references.md is a file to gather all references together \nthis file is appended to every raw markdown.\n-->\n",
+      "summary": "",
+      "date_published": "2024-11-14T00:00:00-00:00",
+      "image": "",
+      "authors": [
+        {
+          "name": "Bruno Rocha",
+          "url": "https://go.rocha.social/@bruno",
+          "avatar": "https://github.com/rochacbruno.png"
+        }
+      ],
+      "tags": [],
+      "language": "en"
+    }
+  ]
+}

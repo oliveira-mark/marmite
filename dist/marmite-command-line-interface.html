@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="./static/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+    <meta name="generator" content="Marmite" />
+    
+<meta property="og:title" content="Marmite Command Line Interface">
+
+<meta property="og:description" content="Marmite CLI is designed to be always executed pointing to an input_folder where the markdown content...">
+
+<meta property="og:image" content="https://www.myblog.com/blog/media/og_image.jpg">
+
+
+<meta property="og:url" content="https://www.myblog.com/blog/marmite-command-line-interface.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="My Blog">
+
+<meta property="article:published_time" content=" 2024-11-26T00:00:00+00:00">
+
+
+<meta property="article:author" content="https://www.myblog.com/blog/author-rochacbruno.html">
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.myblog.com/blog/marmite-command-line-interface.html"
+    },
+    "url": "https://www.myblog.com/blog/marmite-command-line-interface.html",
+    "headline": "Marmite Command Line Interface",
+    "description": "Marmite CLI is designed to be always executed pointing to an input_folder where the markdown content is located,
+and besides generating the ...",
+    
+    "author": {
+        "@type": "Person",
+        "name": "Bruno Rocha",
+        "url": "https://www.myblog.com/blog/author-rochacbruno.html",
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "My Blog",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.myblog.com/blog/media/logo.png"
+        }
+    },
+    "datePublished": "2024-11-26T00:00:00+00:00"
+}
+</script>
+
+
+    <title>Marmite Command Line Interface | My Blog</title>
+    <link rel="stylesheet" type="text/css" href="./static/pico.min.css">
+    <link rel="stylesheet" type="text/css" href="./static/marmite.css">
+    
+    <link rel="stylesheet" type="text/css" href="./static/custom.css">
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github.min.css" id="highlightjs-theme" />
+
+
+
+    <link rel="alternate" type="application/rss+xml" title="index" href="index.rss">
+    
+    <link rel="alternate" type="application/rss+xml" title="alt" href="alt.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: docs" href="tag-docs.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: customization" href="tag-customization.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: templates" href="tag-templates.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: theme" href="tag-theme.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: GFM" href="tag-gfm.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: markdown" href="tag-markdown.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: Common Mark" href="tag-common-mark.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: comments" href="tag-comments.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: hosting" href="tag-hosting.rss">
+    <link rel="alternate" type="application/rss+xml" title="author: john" href="author-john.rss">
+    <link rel="alternate" type="application/rss+xml" title="author: karlamagueta" href="author-karlamagueta.rss">
+    <link rel="alternate" type="application/rss+xml" title="author: rochacbruno" href="author-rochacbruno.rss">
+    <link rel="alternate" type="application/rss+xml" title="year: 2024" href="archive-2024.rss">
+    <link rel="alternate" type="application/rss+xml" title="year: 2023" href="archive-2023.rss">
+    
+
+    
+    <link rel="alternate" type="application/feed+json" title="JSON index" href="index.json">
+    
+    <link rel="alternate" type="application/feed+json" title="JSON alt" href="alt.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: docs" href="tag-docs.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: customization" href="tag-customization.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: templates" href="tag-templates.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: theme" href="tag-theme.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: GFM" href="tag-gfm.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: markdown" href="tag-markdown.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: Common Mark" href="tag-common-mark.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: comments" href="tag-comments.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: hosting" href="tag-hosting.json">
+    <link rel="alternate" type="application/feed+json" title="JSON author: john" href="author-john.json">
+    <link rel="alternate" type="application/feed+json" title="JSON author: karlamagueta" href="author-karlamagueta.json">
+    <link rel="alternate" type="application/feed+json" title="JSON author: rochacbruno" href="author-rochacbruno.json">
+    <link rel="alternate" type="application/feed+json" title="JSON year: 2024" href="archive-2024.json">
+    <link rel="alternate" type="application/feed+json" title="JSON year: 2023" href="archive-2023.json">
+    
+    
+    
+    
+    <script defer src="https://umami.rochacbruno.com/script.js" data-website-id="c8fbd715-5b90-4efd-b27e-a5836dce86a4"></script>
+<!-- _references.md is a file to gather all references together 
+this file is appended to every raw markdown.
+-->
+
+    
+</head>
+<body>
+    
+    <div class="container-fluid announcement-wrapper">
+        <div class="announcement"><p>Give us a ☆ on <a href="https://github.com/rochacbruno/marmite">github</a></p>
+<!-- _references.md is a file to gather all references together 
+this file is appended to every raw markdown.
+-->
+</div>
+    </div>
+    
+    <main class="container">
+        
+        <header class="header-content">
+            <nav class="header-nav">
+                <ul class="header-name">
+                    <li>
+                        <hgroup>
+                            <h2><a href="./" class="contrast">My Blog</a></h2>
+                            
+                        </hgroup>
+                    </li>
+                </ul>
+                <button id="menu-toggle" class="hamburger">&#9776;</button>
+                
+                <ul class="header-menu" id="header-menu">
+                    
+                      
+                      
+                    <li>
+                        
+                        <a class="menu-item secondary"  href="./pages.html">Pages</a>
+                        
+                    </li>
+                    
+                      
+                      
+                    <li>
+                        
+                        <a class="menu-item secondary"  href="./tags.html">Tags</a>
+                        
+                    </li>
+                    
+                      
+                      
+                    <li>
+                        
+                        <a class="menu-item secondary"  href="./archive.html">Archive</a>
+                        
+                    </li>
+                    
+                      
+                      
+                    <li>
+                        
+                        <a class="menu-item secondary"  href="./authors.html">Authors</a>
+                        
+                    </li>
+                    
+                      
+                      
+                    <li>
+                        
+                        <a class="menu-item secondary"  href="https://github.com/rochacbruno/marmite" target="_blank" >Github</a>
+                        
+                    </li>
+                    
+                    <li><span class="theme-toggle secondary" title="dark mode">&#9789;</span></li>
+                    
+                    <li><a href="#" id="search-toggle" class="secondary" title="Search (Ctrl + Shift + F)"> <span class="search-txt">Search</span><span class="search-magnifier"></span></a></li>
+                    
+                    <div class="underline"></div>
+                </ul>
+            </nav>
+            
+            <div class="marmite-background-overlay" id="overlay-close"></div>
+            <div class="marmite-search-bar hidden">
+                <span>Search</span>
+                <button class="marmite-close-button" id="search-close">X</button>
+                <input placeholder="Search" id="marmite-search-input" />
+                <div class="marmite-search-bar-result">
+                    <ul id="marmite-search-bar-result"></ul>
+                </div>
+            </div>
+            
+        </header>
+        
+        <section class="main-content">
+            
+
+
+
+<article>
+
+  
+
+
+<div class="content-title" id="title">
+    <h1>Marmite Command Line Interface</h1> 
+    
+
+
+<span class="content-date">
+    <small> Tuesday, 26 November 2024 - &#10710; 7 min</small>
+</span>
+
+</div>
+
+  
+  <div class="content-toc">
+    <a href="#" id="toc"></a>
+    <details>
+    <summary>🗒️</summary>
+    <ul>
+<ul>
+<li><a href="#initialize-a-project">Initialize a Project</a></li>
+<li><a href="#add-new-content">Add new content</a></li>
+<li><a href="#generate-the-site">Generate the site</a></li>
+<ul>
+<li><a href="#rebuild-when-content-changes">Rebuild when content changes</a></li>
+<li><a href="#serving-the-site">Serving the site</a></li>
+</ul>
+<li><a href="#start-a-new-theme">Start a new theme</a></li>
+<li><a href="#generate-configuration">Generate configuration</a></li>
+<ul>
+<li><a href="#default">Default</a></li>
+<li><a href="#override-configuration">Override Configuration</a></li>
+</ul>
+<li><a href="#cli-help">CLI Help</a></li>
+</ul>
+</ul>
+
+    </details>
+  </div>
+  
+
+  <div class="content-html"><p>Marmite CLI is designed to be always executed pointing to an <code>input_folder</code> where the markdown content is located,
+and besides generating the site it comes with other useful features.</p>
+<p>The basic usage is very simple:</p>
+<pre><code class="language-console">$ marmite input_folder
+Site generated at input_folder/site
+</code></pre>
+<p>Or you can specify the output folder:</p>
+<pre><code class="language-console">$ marmite input_folder output_folder
+Site generated at output_folder
+</code></pre>
+<blockquote>
+<p>Check <code>marmite --help</code> for a complete list.</p>
+</blockquote>
+<p>Besides this basic usage Marmite comes with other useful arguments.</p>
+<h2><a href="#initialize-a-project" aria-hidden="true" class="anchor" id="initialize-a-project"></a>Initialize a Project</h2>
+<p>Marmite can gerate a site from any folder containing markdown files,
+however if you need to initialize a project from the scratch, marmite
+can generate the recommended structure.</p>
+<pre><code class="language-console">$ marmite --init-site myblog
+Config file generated: &quot;myblog/marmite.yaml&quot;
+</code></pre>
+<p>The site will be created with the default configuration, it is possible to <a href="#override-configuration" data-wikilink="true">Override Configuration</a> passing
+each parameter e,g: <code>--name MySite</code>.</p>
+<p>The generated structure looks like:</p>
+<pre><code class="language-console">$ tree myblog
+myblog
+├── content
+│   ├── media/
+│   ├── 2024-11-26-welcome.md
+│   ├── about.md
+│   ├── _404.md
+│   ├── _announce.md
+│   ├── _comments.md
+│   ├── _hero.md
+│   ├── _markdown_footer.md
+│   ├── _markdown_header.md
+│   ├── _references.md
+│   └── _sidebar.example.md
+├── custom.css
+├── custom.js
+└── marmite.yaml
+</code></pre>
+<p>Read more on <a href="using-markdown-to-customize-layout.html" data-wikilink="true">Using Markdown to Customize Layout</a> and <a href="customizing-templates.html" data-wikilink="true">Customizing Templates</a></p>
+<h2><a href="#add-new-content" aria-hidden="true" class="anchor" id="add-new-content"></a>Add new content</h2>
+<p>To add new content you just need to create new markdown files on the <code>content</code> folder,
+you can use your preferred tools and editors for that task.</p>
+<p>Marmite provides the utility to automate creating the file via CLI, which is useful
+to have the <strong>date</strong> attribute set automatically.</p>
+<pre><code class="language-console">$ marmite myblog --new &quot;My first post&quot; -t &quot;post,content&quot;   
+myblog/content/2024-11-26-12-34-27-my-first-post.md
+</code></pre>
+<p>Pass <code>-p</code> to create a page instead of a post.<br />
+Pass <code>-e</code> to immediately open the file on the <code>$EDITOR</code></p>
+<h2><a href="#generate-the-site" aria-hidden="true" class="anchor" id="generate-the-site"></a>Generate the site</h2>
+<pre><code class="language-console">$ /marmite myblog -v
+Site generated at: myblog/site/
+</code></pre>
+<p>Or specify a custom <code>output_folder</code>:</p>
+<pre><code class="language-console">$ /marmite myblog /var/www/myblog -v
+Site generated at: /var/www/myblog
+</code></pre>
+<blockquote>
+<p>It is possible to <a href="#override-configuration" data-wikilink="true">Override Configuration</a> during site generation, for example, passing <code>--pagination 5</code> to change how many posts to list per page.</p>
+</blockquote>
+<h3><a href="#rebuild-when-content-changes" aria-hidden="true" class="anchor" id="rebuild-when-content-changes"></a>Rebuild when content changes</h3>
+<p>Marmite can watch for changes on your project and rebuild the site automatically,
+it is required to inform the output folder for this functionality.</p>
+<p>Use <code>-w</code> or <code>--watch</code></p>
+<pre><code class="language-console">$ /marmite myblog /var/www/myblog -w
+Site generated at: /var/www/myblog
+Watching for changed on: myblog/
+</code></pre>
+<h3><a href="#serving-the-site" aria-hidden="true" class="anchor" id="serving-the-site"></a>Serving the site</h3>
+<p>Marmite generates a flat site, which means you can open it directly on your browser (with some limitations)
+or use any web server to serve it.</p>
+<p>Marmite comes with a built-in server to use only locally.</p>
+<p>Use <code>--serve</code> to start the server.</p>
+<pre><code class="language-console">$ /marmite myblog /var/www/myblog -w
+Site generated at: /var/www/myblog
+Watching for changed on: myblog/
+Starting built-in HTTP server...
+Server started at http://0.0.0.0:8000/ - Type ^C to stop.
+</code></pre>
+<p>If you want to change the address use <code>--bind ip:port</code></p>
+<blockquote>
+<p>[!IMPORTANT]<br />
+The built-in server is not suitable for production, when deploying use a webserver such as <a href="https://nginx.org">Nginx</a> or read the <a href="hosting.html" data-wikilink="true">hosting</a> guide to learn how to deploy to Github pages, Gitlab pages, Codeberg Pages, Netlify and more.</p>
+</blockquote>
+<h2><a href="#start-a-new-theme" aria-hidden="true" class="anchor" id="start-a-new-theme"></a>Start a new theme</h2>
+<p><strong>Marmite</strong> comes with a default theme that is optimized for readabily on blogs,
+you can read more on <a href="why-to-use-marmite.html" data-wikilink="true">Why to use marmite</a> article.</p>
+<p>The built-n theme comes with various colorschemes and you can set the desired colorscheme
+on the <code>marmite.yaml</code> file or passing <code>--colorscheme</code> on the CLI.</p>
+<p>The built-in theme can be customized using the <code>custom.css</code> placed on your root folder,
+and individual templates can be overriden on a <code>templates/</code> folder.</p>
+<p>Read more on <a href="customizing-templates.html" data-wikilink="true">Customizing Templates</a></p>
+<p>However, if you want to start a new theme to fully customize you can use the <code>--start-theme</code> argument.</p>
+<pre><code class="language-console">$ marmite myblog /tmp/mysite --start-theme 
+Generated myblog/templates/*
+Generated myblog/static/*
+</code></pre>
+<p>Now you can freely edit the static files and templates.</p>
+<h2><a href="#generate-configuration" aria-hidden="true" class="anchor" id="generate-configuration"></a>Generate configuration</h2>
+<h3><a href="#default" aria-hidden="true" class="anchor" id="default"></a>Default</h3>
+<p>To generate default config file</p>
+<pre><code class="language-console">$ marmite myblog --generate-config
+Config file generated: &quot;myblog/marmite.yaml&quot;
+</code></pre>
+<h3><a href="#override-configuration" aria-hidden="true" class="anchor" id="override-configuration"></a>Override Configuration</h3>
+<p>To override specific keys</p>
+<pre><code class="language-console">$ marmite myblog --generate-config \
+  --name MySite \
+  --tagline &quot;My articles&quot; \
+  --pagination 20 \
+  --colorscheme gruvbox \
+  --url &quot;https://myblog.com&quot;
+
+Config file generated: &quot;myblog/marmite.yaml&quot;
+</code></pre>
+<h2><a href="#cli-help" aria-hidden="true" class="anchor" id="cli-help"></a>CLI Help</h2>
+<pre><code class="language-console">$ marmite --help
+Marmite is the easiest static site generator.
+
+Usage: marmite [OPTIONS] &lt;INPUT_FOLDER&gt; [OUTPUT_FOLDER]
+
+Arguments:
+  &lt;INPUT_FOLDER&gt;   Input folder containing markdown files
+  [OUTPUT_FOLDER]  Output folder to generate the site [default: `input_folder/site`]
+
+Options:
+  -v, --verbose...
+          Verbosity level (0-4) [default: 0 warn] options: -v: info,-vv: debug,-vvv: trace,-vvvv: trace
+          all
+  -w, --watch
+          Detect changes and rebuild the site automatically
+      --serve
+          Serve the site with a built-in HTTP server
+      --bind &lt;BIND&gt;
+          Address to bind the server [default: 0.0.0.0:8000]
+  -c, --config &lt;CONFIG&gt;
+          Path to custom configuration file [default: marmite.yaml]
+      --init-templates
+          Initialize templates in the project
+      --start-theme
+          Initialize a theme with templates and static assets
+      --generate-config
+          Generate the configuration file
+      --init-site
+          Init a new site with sample content and default configuration this will overwrite existing files
+          usually you don't need to run this because Marmite can generate a site from any folder with
+          markdown files
+      --new &lt;NEW&gt;
+          Create a new post with the given title and open in the default editor
+  -e
+          Edit the file in the default editor
+  -p
+          Set the new content as a page
+  -t &lt;TAGS&gt;
+          Set the tags for the new content tags are comma separated
+      --name &lt;NAME&gt;
+          Site name [default: &quot;Home&quot; or value from config file]
+      --tagline &lt;TAGLINE&gt;
+          Site tagline [default: empty or value from config file]
+      --url &lt;URL&gt;
+          Site url [default: empty or value from config file]
+      --footer &lt;FOOTER&gt;
+          Site footer [default: from '_footer.md' or config file]
+      --language &lt;LANGUAGE&gt;
+          Site main language 2 letter code [default: &quot;en&quot; or value from config file]
+      --pagination &lt;PAGINATION&gt;
+          Number of posts per page [default: 10 or value from config file]
+      --enable-search &lt;ENABLE_SEARCH&gt;
+          Enable search [default: false or from config file] [possible values: true, false]
+      --content-path &lt;CONTENT_PATH&gt;
+          Path for content subfolder [default: &quot;content&quot; or value from config file] this is the folder
+          where markdown files are stored inside `input_folder` no need to change this if your markdown
+          files are in `input_folder` directly
+      --templates-path &lt;TEMPLATES_PATH&gt;
+          Path for templates subfolder [default: &quot;templates&quot; or value from config file]
+      --static-path &lt;STATIC_PATH&gt;
+          Path for static subfolder [default: &quot;static&quot; or value from config file]
+      --media-path &lt;MEDIA_PATH&gt;
+          Path for media subfolder [default: &quot;media&quot; or value from config file] this path is relative to
+          the folder where your content files are
+      --default-date-format &lt;DEFAULT_DATE_FORMAT&gt;
+          Default date format [default: &quot;%b %e, %Y&quot; or from config file] see
+          &lt;https://docs.rs/chrono/0.4.19/chrono/format/strftime/index.html&gt;
+  -h, --help
+          Print help
+  -V, --version
+          Print version
+</code></pre>
+<blockquote>
+<p>Please consider giving a ☆ on Marmite <a href="https://github.com/rochacbruno/marmite">Github</a> repository, that helps a lot!</p>
+</blockquote>
+<!-- Contents from _markdown_footer.md are appended to every content -->
+<!-- _references.md is a file to gather all references together 
+this file is appended to every raw markdown.
+-->
+</div>
+  
+  <footer class="data-tags-footer">
+
+    <div class="content-authors-flex">
+      <div class="content-authors-full">
+        
+<div class="content-authors">
+    <ul>
+        
+            
+            
+            <li>
+                <a href="author-rochacbruno.html">
+                    <img src="https://github.com/rochacbruno.png" alt="Bruno Rocha" class="avatar">
+                    Bruno Rocha
+                </a>
+            </li>
+            
+        
+    </ul>
+</div>
+
+
+      </div>
+
+      <div class="date-tags-container">
+        <div class="content-date">
+          
+
+
+<span class="content-date">
+    <small> Tuesday, 26 November 2024 - &#10710; 7 min</small>
+</span>
+
+        </div>
+
+        <ul class="content-tags">
+          
+          <li><a href="./tag-docs.html">docs</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </footer>
+  
+</article>
+
+
+
+
+  
+  
+  
+  
+  <article>
+    Related docs content
+    <ul>
+      
+      
+      
+      
+      <li><a href="./getting-started.html">Getting started</a></li>
+      
+      
+      <li><a href="./why-to-use-marmite.html">Why to use Marmite?</a></li>
+      
+      
+      <li><a href="./customizing-templates.html">Customizing Templates</a></li>
+      
+      
+      <li><a href="./using-markdown-to-customize-layout.html">Using Markdown to customize layout</a></li>
+      
+    </ul>
+  </article>
+  
+
+
+
+    <article><h5><a href="#comments" aria-hidden="true" class="anchor" id="comments"></a>Comments</h5>
+<script src="https://giscus.app/client.js"
+        data-repo="rochacbruno/marmite"
+        data-repo-id="R_kgDONAKMvQ"
+        data-category="Comments"
+        data-category-id="DIC_kwDONAKMvc4CjmH_"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+<!-- _references.md is a file to gather all references together 
+this file is appended to every raw markdown.
+-->
+</article>
+
+
+
+        </section>
+        
+        <footer class="footer-content grid">
+            <div>Powered by <a href="https://github.com/rochacbruno/marmite">Marmite</a> | <small><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY_NC-SA</a></small></div>
+            
+            <div class="colorscheme-toggle-div">
+                colorscheme: <select name="colorscheme" class="colorscheme-toggle"><option value="default">default</option></select>
+                <span class="theme-toggle secondary" title="dark mode">&#9789;</span>
+            </div>
+            
+        </footer>
+        
+    </main>
+
+    <script src="./static/marmite.js"></script>
+    <script src="./static/custom.js"></script>
+    
+    <script type="module" src="./static/search.js"></script>
+    
+    
+    <script type="application/javascript" >
+        colorschemeSwitcher();
+    </script>
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script>
+<script>
+  hljs.highlightAll();
+</script>
+
+
+
+</body>
+</html>

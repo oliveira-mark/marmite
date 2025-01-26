@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="./static/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+    <meta name="generator" content="Marmite" />
+    
+<meta property="og:title" content="Content Types and Taxonomy">
+
+<meta property="og:description" content="Marmite separates content in two kinds, posts and pages.
+An opinionated decision of marmite is how i...">
+
+<meta property="og:image" content="https://www.myblog.com/blog/media/og_image.jpg">
+
+
+<meta property="og:url" content="https://www.myblog.com/blog/content-types.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="My Blog">
+
+<meta property="article:published_time" content=" 2024-10-20T00:00:00+00:00">
+
+
+<meta property="article:author" content="https://www.myblog.com/blog/author-rochacbruno.html">
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.myblog.com/blog/content-types.html"
+    },
+    "url": "https://www.myblog.com/blog/content-types.html",
+    "headline": "Content Types and Taxonomy",
+    "description": "Marmite separates content in two kinds, posts and pages.
+An opinionated decision of marmite is how it makes the distinction.
+Posts
+If conten...",
+    
+    "author": {
+        "@type": "Person",
+        "name": "Bruno Rocha",
+        "url": "https://www.myblog.com/blog/author-rochacbruno.html",
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "My Blog",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.myblog.com/blog/media/logo.png"
+        }
+    },
+    "datePublished": "2024-10-20T00:00:00+00:00"
+}
+</script>
+
+
+    <title>Content Types and Taxonomy | My Blog</title>
+    <link rel="stylesheet" type="text/css" href="./static/pico.min.css">
+    <link rel="stylesheet" type="text/css" href="./static/marmite.css">
+    
+    <link rel="stylesheet" type="text/css" href="./static/custom.css">
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github.min.css" id="highlightjs-theme" />
+
+
+
+    <link rel="alternate" type="application/rss+xml" title="index" href="index.rss">
+    
+    <link rel="alternate" type="application/rss+xml" title="alt" href="alt.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: docs" href="tag-docs.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: customization" href="tag-customization.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: templates" href="tag-templates.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: theme" href="tag-theme.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: GFM" href="tag-gfm.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: markdown" href="tag-markdown.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: Common Mark" href="tag-common-mark.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: comments" href="tag-comments.rss">
+    <link rel="alternate" type="application/rss+xml" title="tag: hosting" href="tag-hosting.rss">
+    <link rel="alternate" type="application/rss+xml" title="author: john" href="author-john.rss">
+    <link rel="alternate" type="application/rss+xml" title="author: karlamagueta" href="author-karlamagueta.rss">
+    <link rel="alternate" type="application/rss+xml" title="author: rochacbruno" href="author-rochacbruno.rss">
+    <link rel="alternate" type="application/rss+xml" title="year: 2024" href="archive-2024.rss">
+    <link rel="alternate" type="application/rss+xml" title="year: 2023" href="archive-2023.rss">
+    
+
+    
+    <link rel="alternate" type="application/feed+json" title="JSON index" href="index.json">
+    
+    <link rel="alternate" type="application/feed+json" title="JSON alt" href="alt.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: docs" href="tag-docs.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: customization" href="tag-customization.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: templates" href="tag-templates.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: theme" href="tag-theme.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: GFM" href="tag-gfm.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: markdown" href="tag-markdown.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: Common Mark" href="tag-common-mark.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: comments" href="tag-comments.json">
+    <link rel="alternate" type="application/feed+json" title="JSON tag: hosting" href="tag-hosting.json">
+    <link rel="alternate" type="application/feed+json" title="JSON author: john" href="author-john.json">
+    <link rel="alternate" type="application/feed+json" title="JSON author: karlamagueta" href="author-karlamagueta.json">
+    <link rel="alternate" type="application/feed+json" title="JSON author: rochacbruno" href="author-rochacbruno.json">
+    <link rel="alternate" type="application/feed+json" title="JSON year: 2024" href="archive-2024.json">
+    <link rel="alternate" type="application/feed+json" title="JSON year: 2023" href="archive-2023.json">
+    
+    
+    
+    
+    <script defer src="https://umami.rochacbruno.com/script.js" data-website-id="c8fbd715-5b90-4efd-b27e-a5836dce86a4"></script>
+<!-- _references.md is a file to gather all references together 
+this file is appended to every raw markdown.
+-->
+
+    
+</head>
+<body>
+    
+    <div class="container-fluid announcement-wrapper">
+        <div class="announcement"><p>Give us a ☆ on <a href="https://github.com/rochacbruno/marmite">github</a></p>
+<!-- _references.md is a file to gather all references together 
+this file is appended to every raw markdown.
+-->
+</div>
+    </div>
+    
+    <main class="container">
+        
+        <header class="header-content">
+            <nav class="header-nav">
+                <ul class="header-name">
+                    <li>
+                        <hgroup>
+                            <h2><a href="./" class="contrast">My Blog</a></h2>
+                            
+                        </hgroup>
+                    </li>
+                </ul>
+                <button id="menu-toggle" class="hamburger">&#9776;</button>
+                
+                <ul class="header-menu" id="header-menu">
+                    
+                      
+                      
+                    <li>
+                        
+                        <a class="menu-item secondary"  href="./pages.html">Pages</a>
+                        
+                    </li>
+                    
+                      
+                      
+                    <li>
+                        
+                        <a class="menu-item secondary"  href="./tags.html">Tags</a>
+                        
+                    </li>
+                    
+                      
+                      
+                    <li>
+                        
+                        <a class="menu-item secondary"  href="./archive.html">Archive</a>
+                        
+                    </li>
+                    
+                      
+                      
+                    <li>
+                        
+                        <a class="menu-item secondary"  href="./authors.html">Authors</a>
+                        
+                    </li>
+                    
+                      
+                      
+                    <li>
+                        
+                        <a class="menu-item secondary"  href="https://github.com/rochacbruno/marmite" target="_blank" >Github</a>
+                        
+                    </li>
+                    
+                    <li><span class="theme-toggle secondary" title="dark mode">&#9789;</span></li>
+                    
+                    <li><a href="#" id="search-toggle" class="secondary" title="Search (Ctrl + Shift + F)"> <span class="search-txt">Search</span><span class="search-magnifier"></span></a></li>
+                    
+                    <div class="underline"></div>
+                </ul>
+            </nav>
+            
+            <div class="marmite-background-overlay" id="overlay-close"></div>
+            <div class="marmite-search-bar hidden">
+                <span>Search</span>
+                <button class="marmite-close-button" id="search-close">X</button>
+                <input placeholder="Search" id="marmite-search-input" />
+                <div class="marmite-search-bar-result">
+                    <ul id="marmite-search-bar-result"></ul>
+                </div>
+            </div>
+            
+        </header>
+        
+        <section class="main-content">
+            
+
+
+
+<article>
+
+  
+
+
+<div class="content-title" id="title">
+    <h1>Content Types and Taxonomy</h1> 
+    
+
+
+<span class="content-date">
+    <small> Sunday, 20 October 2024 - &#10710; 6 min</small>
+</span>
+
+</div>
+
+  
+  <div class="content-toc">
+    <a href="#" id="toc"></a>
+    <details>
+    <summary>🗒️</summary>
+    <ul>
+<ul>
+<ul>
+<li><a href="#posts">Posts</a></li>
+<ul>
+<li><a href="#date-discovery">Date discovery</a></li>
+<li><a href="#where-posts-are-listed">Where posts are listed?</a></li>
+<li><a href="#formatting">Formatting</a></li>
+<li><a href="#metadata">Metadata</a></li>
+</ul>
+<li><a href="#pages">Pages</a></li>
+<li><a href="#menu">Menu</a></li>
+<ul>
+<li><a href="#customizing-the-menu">Customizing the menu</a></li>
+</ul>
+<li><a href="#taxonomies-and-groups">Taxonomies and groups</a></li>
+<ul>
+<li><a href="#group-content-together">Group content together</a></li>
+<ul>
+<li><a href="#authors">Authors</a></li>
+<li><a href="#tags">Tags</a></li>
+<li><a href="#archive">Archive</a></li>
+</ul>
+<li><a href="#separating-content">Separating content</a></li>
+<ul>
+<li><a href="#streams">Streams</a></li>
+</ul>
+</ul>
+<li><a href="#media">Media</a></li>
+<li><a href="#site-config">Site Config</a></li>
+</ul>
+<li><a href="#theme-customization">Theme customization</a></li>
+<li><a href="#creating-a-new-theme">Creating a new Theme</a></li>
+</ul>
+</ul>
+
+    </details>
+  </div>
+  
+
+  <div class="content-html"><p>Marmite separates content in two kinds, <strong>posts</strong> and <strong>pages</strong>.</p>
+<p>An <strong>opinionated</strong> decision of marmite is how it makes the distinction.</p>
+<h3><a href="#posts" aria-hidden="true" class="anchor" id="posts"></a>Posts</h3>
+<p>If content has a <strong>date</strong> it is a <strong>Post</strong>!</p>
+<p>Instead of having to mark if a content is a page via metadata, <strong>Marmite</strong> takes the
+simplicity to just decided based on if the content is chronological or static.</p>
+<h4><a href="#date-discovery" aria-hidden="true" class="anchor" id="date-discovery"></a>Date discovery</h4>
+<p>There are 2 ways to tell <strong>Marmite</strong> that your content is a <strong>Post</strong>:</p>
+<ul>
+<li>
+<p>Option 1: <code>date:</code> on <strong>frontmatter</strong> in any of the valid formats</p>
+<pre><code class="language-yaml">---
+date: 2024-10-20
+---
+# Hello
+</code></pre>
+<p>Valid formats:</p>
+<pre><code class="language-bash">2024-01-01
+2024-01-01 15:40
+2024-01-01-15:40
+2024-01-01 15:40:56
+2024-01-01-15:40:56
+2024-01-01T15:40
+2024-01-01T15:40:56
+</code></pre>
+<p>Optional precision and timezone suffixes are ignored:
+<code>.123Z, +0000, .123+0000, .123+0000Z</code></p>
+</li>
+<li>
+<p>Option 2: <strong>filename</strong> with a valid date prefix</p>
+<pre><code class="language-console">$ ls mycontent
+my-file.md
+2024-01-01-my-file.md
+2024-01-01-15-30-my-file.md
+2024-01-01-15-30-12-my-file.md
+2024-01-01T15:30-my-file.md
+2024-01-01T15:30:12-my-file.md
+</code></pre>
+</li>
+</ul>
+<h4><a href="#where-posts-are-listed" aria-hidden="true" class="anchor" id="where-posts-are-listed"></a>Where posts are listed?</h4>
+<ul>
+<li>By default on <code>/index.html</code> ordered by <strong>date</strong> (newest first)
+<ul>
+<li>If the content defines a custom stream, then the post is not listed on index,
+and appears only on the custom stream.
+<code>content.md</code>
+<pre><code>---
+stream: notes
+---
+# my first note
+</code></pre>
+This post will not show on <code>index.html</code> but will on <code>/notes.html</code><br />
+This post will not show on <code>index.rss</code> but will on <code>/notes.rss</code></li>
+</ul>
+</li>
+<li>Taxonomies
+<ul>
+<li><code>/tags.html</code> will list content grouped by tags
+<ul>
+<li><code>/tag-{name}.html</code> will list content for the <code>name</code> tag.</li>
+</ul>
+</li>
+<li><code>/archive.html</code> will list content grouped by year
+<ul>
+<li><code>/archive-{year}.html</code> will list content for the <code>year</code></li>
+</ul>
+</li>
+<li><code>/authors.html</code> will list content grouped by author
+<ul>
+<li><code>/author-{username}.html</code> will list content by author <code>username</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4><a href="#formatting" aria-hidden="true" class="anchor" id="formatting"></a>Formatting</h4>
+<p><strong>Marmite</strong> parses the markdown content using <strong>CommonMark</strong> and <strong>Github Flavoured Markdown</strong>, it allows raw HTML and adds some extensions to enable Wikilinks, Obsidian Links, Backlinks, Spoilers, Footnotes and the built-in theme supports <strong>mermaid</strong> and <strong>math</strong> syntax.</p>
+<p>You can see examples on <a href="markdown-format.html" data-wikilink="true">markdown-format</a></p>
+<h4><a href="#metadata" aria-hidden="true" class="anchor" id="metadata"></a>Metadata</h4>
+<p>On each markdown file it is possible (and optional) to define metadata on the <strong>FrontMatter</strong></p>
+<p>Marmite supports 3 formats for the front matter.</p>
+<p><strong>YAML</strong> separated by <code>---</code>. (<strong>recommended</strong>)</p>
+<pre><code class="language-yaml">---
+field: value
+---
+</code></pre>
+<p><strong>TOML</strong> separated by <code>+++</code>.</p>
+<pre><code class="language-yaml">+++
+field = &quot;value&quot;
++++
+</code></pre>
+<p><strong>JSON</strong> enclosed in <code>{ }</code>. (<strong>NOT recommended</strong>, but supported for compatibility)</p>
+<pre><code class="language-yaml">{
+  &quot;field&quot;: &quot;value&quot;
+}
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-yaml">---
+field: value
+---
+
+# title
+
+Content
+</code></pre>
+<p><code>marmite</code> supports the following fields:</p>
+<dl>
+<dt><strong>title</strong></dt>
+<dd>
+<p>str: Title of the post<br />
+<strong>default</strong>: extracted from the first line of markdown.</p>
+</dd>
+<dt><strong>description</strong></dt>
+<dd>
+<p>str: Description text (for listing and RSS)<br />
+<strong>default</strong>: extracted from the content first sentence.</p>
+</dd>
+<dt><strong>slug</strong></dt>
+<dd>
+<p>str: this-is-the-post-slug<br />
+<strong>default</strong>: slugfied <code>title</code> or <code>filename</code>.</p>
+</dd>
+<dt><strong>date</strong></dt>
+<dd>
+<p>str: <code>YYYY-MM-DD</code><br />
+<strong>formats</strong> <code>YYYY-MM-DD</code>, <code>YYYY-MM-DD HH:MM</code>, <code>YYYY-MM-DD HH:MM:SS</code><br />
+<strong>default</strong>: extracted from filename or null.</p>
+</dd>
+<dt><strong>tags</strong></dt>
+<dd>
+<p>Comma separated list of tags, or YAML list of tags<br />
+<strong>formats</strong></p>
+<pre><code class="language-yaml">tags: tag1, tag2, tag3
+tags:
+  - tag1
+  - tag2
+</code></pre>
+<p><strong>default</strong> empty</p>
+</dd>
+<dt><strong>authors</strong></dt>
+<dd>
+<p>Single author, comma separated list of authors, or YAML list of authors<br />
+<strong>formats</strong></p>
+<pre><code class="language-yaml">author: username1
+authors: username1, username2, username3
+authors:
+  - username1
+  - username2
+</code></pre>
+<p><strong>default</strong> empty<br />
+<strong>important</strong> authors are identified by the username, and if there is a matching author in the config file then the data is used to build the profile page on <code>author-{username}.html</code> with avatar, bio and links.</p>
+</dd>
+<dt><strong>stream</strong></dt>
+<dd>
+<p>str: something<br />
+<strong>default</strong>: index<br />
+<strong>important</strong>: Stream is used to define a separate index for the content, <code>something.html</code> will be the list of contents for a stream.</p>
+</dd>
+<dt><strong>card_image</strong></dt>
+<dd>
+<p>Image url to use as social card image <code>og:image</code>, this is the image that shows when you share your link on mastodon, bluesky, linkedin etc.<br />
+<strong>format</strong>  <code>media/file.png</code> or <code>https://path/to/img.jpg</code><br />
+<strong>default</strong> banner_image or first image extracted from html content or config card_image, or None.</p>
+</dd>
+<dt><strong>banner_image</strong></dt>
+<dd>
+<p>Image url to use the top banner on content page<br />
+<strong>format</strong>  <code>media/file.png</code> or <code>https://path/to/img.jpg</code><br />
+<strong>default</strong> empty</p>
+</dd>
+<dt><strong>extra</strong></dt>
+<dd>
+<p>arbitrary extra <code>key:value</code> pair in YAML format (for template customization)<br />
+<strong>format</strong></p>
+<pre><code class="language-yaml">extra:
+  math: true
+  mermaid: true
+</code></pre>
+<p><strong>important</strong>: the above example shows the keys supported by the default theme.</p>
+</dd>
+<dt><strong>pinned</strong></dt>
+<dd>
+<p>Boolean <code>true</code> or <code>false</code> indicating if content is pinned on top
+of its stream page.
+<strong>default</strong> false</p>
+</dd>
+<dt><strong>toc</strong></dt>
+<dd>
+<p>Boolean <code>true</code> or <code>false</code> indicating if Table of contents must be generated and included to the content.
+<strong>default</strong> false</p>
+</dd>
+</dl>
+<h3><a href="#pages" aria-hidden="true" class="anchor" id="pages"></a>Pages</h3>
+<p>If the markdown file doesn't define a date, then <strong>Marmite</strong> can't list it on index or feeds, because it doesn't know where to include it in the chronological order, so it makes sense to render this content as a page named <code>{slug}.html</code> and make it accessible only via the link directly, so it can optionally added to the main menu or linked in other content.</p>
+<h3><a href="#menu" aria-hidden="true" class="anchor" id="menu"></a>Menu</h3>
+<p>By default marmite includes items in the main menu:</p>
+<p><strong>Tags</strong> -&gt; <code>tags.html</code></p>
+<p>:Content grouped by tags</p>
+<p><strong>Archive</strong> -&gt; <code>archive.html</code></p>
+<p>:Content grouped by year</p>
+<p><strong>Authors</strong> -&gt; <code>authors.html</code></p>
+<p>:Content grouped by author</p>
+<p><strong>Streams</strong> -&gt; <code>streams.html</code></p>
+<p>:Content grouped by stream</p>
+<dl>
+<dt><strong>Pages</strong> -&gt; <code>pages.html</code></dt>
+<dd>
+<p>List of pages in alphabetical order.</p>
+</dd>
+</dl>
+<h4><a href="#customizing-the-menu" aria-hidden="true" class="anchor" id="customizing-the-menu"></a>Customizing the menu</h4>
+<p>The menu is defined on <code>marmite.yaml</code> config file and is a list of tuples
+containing name and URL</p>
+<p><code>marmite.yaml</code></p>
+<pre><code class="language-yaml">menu:
+  - - About
+    - about.html
+  - - Github
+    - https://github.com/me
+</code></pre>
+<p>You can add anything you want to the menu and the name allows HTML.</p>
+<blockquote>
+<p>When <code>search_enabled: true</code> is on your config marmite will also add an icon to open the search spotlight on the menu, also the light/dark mode switch.</p>
+</blockquote>
+<h3><a href="#taxonomies-and-groups" aria-hidden="true" class="anchor" id="taxonomies-and-groups"></a>Taxonomies and groups</h3>
+<p>Taxonomy is a way to group or separate content based on marks, <strong>Marmite</strong> allows you to add the following marks to the content.</p>
+<h4><a href="#group-content-together" aria-hidden="true" class="anchor" id="group-content-together"></a>Group content together</h4>
+<h5><a href="#authors" aria-hidden="true" class="anchor" id="authors"></a>Authors</h5>
+<p>Add <code>author: username</code> or <code>authors: username, other</code> to the content.</p>
+<p>A page named <code>authors.html</code> <a href="authors.html" data-wikilink="true">authors</a> is rendered and can be included in the menu,
+it groups all content for authors.</p>
+<h5><a href="#tags" aria-hidden="true" class="anchor" id="tags"></a>Tags</h5>
+<p>Add <code>tags: one,two</code> to the content.</p>
+<p>A page named <code>tags.html</code> <a href="tags.html" data-wikilink="true">tags</a> is rendered and can be included in the menu, or linked in any other page, this goups content by tags.</p>
+<h5><a href="#archive" aria-hidden="true" class="anchor" id="archive"></a>Archive</h5>
+<p>Add <code>data: YYYY-MM-DD</code> to the content and a page named <code>archive.html</code> <a href="archive.html" data-wikilink="true">archive</a> is rendered grouping content by year.</p>
+<p>Each of the pages above will also have its equivalent <code>.rss</code> feed.</p>
+<h4><a href="#separating-content" aria-hidden="true" class="anchor" id="separating-content"></a>Separating content</h4>
+<h5><a href="#streams" aria-hidden="true" class="anchor" id="streams"></a>Streams</h5>
+<p>Add <code>stream: name</code> to the content.</p>
+<p>Streams are a way to have separate index on the site, you can check all available
+streams on <code>streams.html</code> page <a href="streams.html" data-wikilink="true">streams</a>.</p>
+<p>Each stream have its separate RSS feed and listing page.</p>
+<hr />
+<h3><a href="#media" aria-hidden="true" class="anchor" id="media"></a>Media</h3>
+<p>Images can be added using the normal markdown tag, marmite doesn't have shortcodes yet.</p>
+<p>For local images you have to put the files in a folder named <code>media</code> in the content folder.</p>
+<pre><code class="language-markdown"># content with media
+
+![Image here](media/subfolder/image.png)
+</code></pre>
+<p>Marmite will copy your <code>media</code> folder to the output site/</p>
+<h3><a href="#site-config" aria-hidden="true" class="anchor" id="site-config"></a>Site Config</h3>
+<p>Optionally, a file named <code>marmite.yaml</code> inside your content folder (together with your .md files)
+can be used to customize configuration.</p>
+<blockquote>
+<p><code>--config file.yaml</code> can also be passed directly to the CLI.</p>
+</blockquote>
+<p>example:</p>
+<pre><code class="language-yaml">name: My Blog
+tagline: Poems, Essays and Articles
+url: https://mysite.com/blog
+menu:
+  - [&quot;About&quot;, &quot;about.html&quot;]
+  - [&quot;Projects&quot;, &quot;projects.html&quot;]
+  - [&quot;Contact&quot;, &quot;contact.html&quot;]
+  - [&quot;Github&quot;, &quot;https://github.com/rochacbruno&quot;]
+extra:
+  colorscheme: gruvbox
+  fediverse_verification: https://mastodon.social/@me
+</code></pre>
+<p>Other options are available and can be viewed on <a href="https://github.com/rochacbruno/marmite/blob/main/example/marmite.yaml">repository</a></p>
+<p>Use <code>--generate-config</code> in the CLI to create a default config file.</p>
+<h2><a href="#theme-customization" aria-hidden="true" class="anchor" id="theme-customization"></a>Theme customization</h2>
+<p>The embedded templates are created with <a href="https://picocss.com/">picocss.com</a> and
+it is easy to customize, just put a <code>custom.css</code> and a <code>custom.js</code>
+in your root folder and use anything that pico supports or just be creative with css.</p>
+<p>If customizing the css and js is not enough then you can create your own theme.</p>
+<h2><a href="#creating-a-new-theme" aria-hidden="true" class="anchor" id="creating-a-new-theme"></a>Creating a new Theme</h2>
+<p>To create a new theme is very simple, you just need to add to your content folder
+the <code>templates</code> and <code>static</code> directories and then customize in the way you like.</p>
+<p>Use <code>--start-theme</code> on the CLI to start a new theme from the built-in theme.</p>
+<p>To learn more about how to create a new theme check this post:</p>
+<p><a href="customizing-templates.html">Customizing Templates</a></p>
+<hr />
+<p><a href="tag-docs.html">Read the Docs</a></p>
+<blockquote>
+<p>Please consider giving a ☆ on Marmite <a href="https://github.com/rochacbruno/marmite">Github</a> repository, that helps a lot!</p>
+</blockquote>
+<!-- Contents from _markdown_footer.md are appended to every content -->
+<!-- _references.md is a file to gather all references together 
+this file is appended to every raw markdown.
+-->
+</div>
+  
+  <footer class="data-tags-footer">
+
+    <div class="content-authors-flex">
+      <div class="content-authors-full">
+        
+<div class="content-authors">
+    <ul>
+        
+            
+            
+            <li>
+                <a href="author-rochacbruno.html">
+                    <img src="https://github.com/rochacbruno.png" alt="Bruno Rocha" class="avatar">
+                    Bruno Rocha
+                </a>
+            </li>
+            
+        
+    </ul>
+</div>
+
+
+      </div>
+
+      <div class="date-tags-container">
+        <div class="content-date">
+          
+
+
+<span class="content-date">
+    <small> Sunday, 20 October 2024 - &#10710; 6 min</small>
+</span>
+
+        </div>
+
+        <ul class="content-tags">
+          
+        </ul>
+      </div>
+    </div>
+  </footer>
+  
+</article>
+
+
+<article>
+  Back-links
+  <ul>
+    
+    <li><a href="./getting-started.html">Getting started</a></li>
+    
+    <li><a href="./why-to-use-marmite.html">Why to use Marmite?</a></li>
+    
+  </ul>
+</article>
+
+
+
+
+
+    <article><h5><a href="#comments" aria-hidden="true" class="anchor" id="comments"></a>Comments</h5>
+<script src="https://giscus.app/client.js"
+        data-repo="rochacbruno/marmite"
+        data-repo-id="R_kgDONAKMvQ"
+        data-category="Comments"
+        data-category-id="DIC_kwDONAKMvc4CjmH_"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+<!-- _references.md is a file to gather all references together 
+this file is appended to every raw markdown.
+-->
+</article>
+
+
+
+        </section>
+        
+        <footer class="footer-content grid">
+            <div>Powered by <a href="https://github.com/rochacbruno/marmite">Marmite</a> | <small><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY_NC-SA</a></small></div>
+            
+            <div class="colorscheme-toggle-div">
+                colorscheme: <select name="colorscheme" class="colorscheme-toggle"><option value="default">default</option></select>
+                <span class="theme-toggle secondary" title="dark mode">&#9789;</span>
+            </div>
+            
+        </footer>
+        
+    </main>
+
+    <script src="./static/marmite.js"></script>
+    <script src="./static/custom.js"></script>
+    
+    <script type="module" src="./static/search.js"></script>
+    
+    
+    <script type="application/javascript" >
+        colorschemeSwitcher();
+    </script>
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script>
+<script>
+  hljs.highlightAll();
+</script>
+
+
+
+</body>
+</html>
