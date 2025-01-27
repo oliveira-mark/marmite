@@ -2,9 +2,9 @@
   "marmite_version": "0.2.3",
   "posts": 11,
   "pages": 3,
-  "generated_at": "2025-01-26 20:25:09.422582700 -03:00",
-  "timestamp": 1737933909,
-  "elapsed_time": 0.4426843,
+  "generated_at": "2025-01-27 07:50:33.051985200 -03:00",
+  "timestamp": 1737975033,
+  "elapsed_time": 0.6547869,
   "config": {
     "name": "My Blog",
     "tagline": "",
@@ -61,17 +61,6 @@
       ]
     },
     "authors": {
-      "karlamagueta": {
-        "name": "Karla Magueta",
-        "avatar": "https://github.com/karlamagueta.png",
-        "bio": null,
-        "links": [
-          [
-            "Github",
-            "https://github.com/karlamagueta"
-          ]
-        ]
-      },
       "rochacbruno": {
         "name": "Bruno Rocha",
         "avatar": "https://github.com/rochacbruno.png",
@@ -92,6 +81,17 @@
           [
             "Links",
             "https://bruno.rocha.social"
+          ]
+        ]
+      },
+      "karlamagueta": {
+        "name": "Karla Magueta",
+        "avatar": "https://github.com/karlamagueta.png",
+        "bio": null,
+        "links": [
+          [
+            "Github",
+            "https://github.com/karlamagueta"
           ]
         ]
       }
